@@ -3,6 +3,7 @@ import React from 'react';
 export default class App extends React.Component {
 
   handleSubmit (event) {
+    console.log("event", event)
     event.preventDefault();
     console.log("form was submitted");
 
