@@ -4,16 +4,22 @@ export default class App extends React.Component {
 
   handleSubmit (event) {
     console.log("event", event)
+    // event.nativeEvent;
     event.preventDefault();
-    console.log("form was submitted");
+    var text = this.handleChange.text;
+    console.log("form submitted value", text);
+  }
 
+  handleChange (event) {
+    var text = event.target.value;
+    console.log("text", text);
   }
 
   render () {
     return  <div>
               <p> TODO </p>
               <form onSubmit={this.handleSubmit}>
-                <input />
+                <input onChange={this.handleChange} />
                 <button> Submit </button>
               </form>
             </div>;
